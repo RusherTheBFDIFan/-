@@ -23,10 +23,6 @@ function gotPoses(results){
     if(results.length > 0){
         console.log(results);
 
-        noseX = results[0].pose.nose.x;
-        noseY = results[0].pose.nose.y;
-        console.log("Nose x = " + noseX + " and nose y = " + noseY);
-
         leftwristX = results[0].pose.leftWrist.x;
         rightwristX = results[0].pose.rightWrist.x;
         difference = floor(leftwristX-rightwristX);
@@ -38,8 +34,6 @@ function gotPoses(results){
 function draw(){
     background('#00C0FD');
 
-    document.getElementById("font_size").innerHTML = difference + "px";
-    fill('#C52E32');
-    stroke('#C52E32');
-    square(noseX, noseY, difference);
+    document.getElementById("square_sides").innerHTML = "Font size of the text will be " + difference + "px";
+    text("TEXT");
 }
